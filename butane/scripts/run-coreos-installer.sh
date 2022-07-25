@@ -2,8 +2,8 @@
 set -x
 
 ignition_file='/var/lib/microshift.ign'
-firstboot_args='console=tty0'
-install_device='/dev/nvme0n1'
+firstboot_args='console=tty0,115200n8' # console instead of VGA
+install_device='/dev/sda'
 cmd="coreos-installer install --firstboot-args=${firstboot_args}"
 cmd+=" --ignition=${ignition_file}"
 cmd+=" ${install_device}"

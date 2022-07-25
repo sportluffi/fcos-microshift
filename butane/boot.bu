@@ -38,6 +38,10 @@ systemd:
         WantedBy=multi-user.target
 storage:
   files:
+    - path: /etc/hostname
+      mode: 0644
+      contents:
+        inline: microshift
     - path: /usr/local/bin/run-coreos-installer
       mode: 0755
       contents:
